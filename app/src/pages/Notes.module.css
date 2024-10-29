@@ -1,0 +1,74 @@
+.container {
+    position: relative;
+    top:100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    padding-top: 30px;
+}
+
+h1 {
+    position: relative;
+    font-size: 2.5rem;
+    margin: 20px 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 10px 0;
+    text-align: center;
+}
+
+button {
+    background-color: aquamarine;
+    height: 50px;
+    width: 140px;
+    border-radius: 40px;
+    font-family: system-ui;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 20px 10px;
+
+}
+
+button:hover {
+    background-color: #4ab8a3;
+}
+
+.input,
+.textarea {
+    position: relative;
+    top:100px;
+    width: 40%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-family: system-ui;
+}
+
+.textarea {
+    height: 100px;
+    font-family: 'Times New Roman', serif;
+}
+
+.notesList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.noteActions {
+    display: flex;
+    gap: 10px;
+}

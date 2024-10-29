@@ -1,0 +1,54 @@
+h1 {
+    position: relative;
+    top: 100px; 
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    position: relative;
+    top: 100px;
+    left: 20px;
+    background-color: aquamarine;
+    height: 50px;
+    width: 140px;
+    border-radius: 40px;
+    font-family: system-ui;
+    font-weight: 600;
+    border: none; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+button:hover {
+    background-color: #4ab8a3; 
+}
+
+.input {
+    position: relative;
+    top: 100px;
+    width: 40%;
+    padding: 10px;
+    margin: 10px 0; 
+    border: 1px solid #ccc; 
+    border-radius: 20px;
+    font-family: system-ui; 
+}
+
+.textarea {
+    position: relative;
+    top: 100px;
+    width: 40%;
+    padding: 10px;
+    margin: 10px 0; 
+    border: 1px solid #ccc; 
+    border-radius: 20px;
+    height: 100px; 
+    font-family: 'Times New Roman';
+}
