@@ -16,12 +16,14 @@ const Analyzer = () => {
 
 
             <div className={styles.dropdownContainer}>
+            <div className={styles.selectWrapper}>
                 <label htmlFor="tone">Choose a tone:</label>
                 <select id="tone" className={styles.dropdown}>
                     <option value="Professional">Professional</option>
                     <option value="Casual">Casual</option>
                     <option value="Sincere">Sincere</option>
-                </select>
+                    </select>
+                </div>
             </div>
 
             <div className={styles.ring}>

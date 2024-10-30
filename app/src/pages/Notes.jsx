@@ -36,30 +36,32 @@ const Notes = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.h1}>Task List</h1>
-        <input
-          type="text"
-          placeholder="Enter your task"
-          value={noteText}
-          onChange={(e) => setNoteText(e.target.value)}
-          className={styles.input}
-        />
-        <button className={styles.button} onClick={addOrUpdateNote}>
-          {editIndex !== null ? 'Update Task' : 'Add Task'}
-        </button>
-        <ul className={styles.notesList}>
-          {notes.map((note, index) => (
-            <li key={index}>
-              <p>{note}</p>
-                <button onClick={() => editNote(index)} className={styles.button}>
-                  Edit
-                </button>
-                <button onClick={() => deleteNote(index)} className={styles.button}>
-                  Delete
-                </button>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <input
+        type="text"
+        placeholder="Enter your task"
+        value={noteText}
+        onChange={(e) => setNoteText(e.target.value)}
+        className={styles.input}
+      />
+      <button className={styles.button} onClick={addOrUpdateNote}>
+        {editIndex !== null ? 'Update Task' : 'Add Task'}
+      </button>
+      <ul className={styles.notesList}>
+        {notes.map((note, index) => (
+          <li key={index} className={styles.noteItem}>
+            <p>{note}</p>
+            <div className={styles.noteActions}>
+              <button onClick={() => editNote(index)} className={styles.button}>
+                Edit
+              </button>
+              <button onClick={() => deleteNote(index)} className={styles.button}>
+                Delete
+              </button>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

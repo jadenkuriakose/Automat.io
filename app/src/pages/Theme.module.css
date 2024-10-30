@@ -29,8 +29,8 @@
   }
   
   .selectWrapper::after {
-    content: '▼';
-    font-size: 0.8rem;
+    content: '➷';
+    font-size: 1.4rem;
     position: absolute;
     right: 12px;
     top: 50%;

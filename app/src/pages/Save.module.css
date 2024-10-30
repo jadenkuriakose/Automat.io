@@ -1,56 +1,191 @@
-
-
-h1 {
-    position: relative;
-    top: 100px; 
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.container{
+.pageContainer {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-button {
+.contentWrapper {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 350px; /* Increased width */
+    height: 350px; /* Increased height */
+    padding: 20px; /* Keep padding */
+    display: flex;
+    flex-direction: column; /* Ensure the layout is vertical */
+}
+
+.contentWrapper.expanded {
+    width: 700px; /* Increased width when expanded */
+    height: 600px; /* Increased height when expanded */
+}
+
+.header {
     position: relative;
-    top: 100px;
-    left: 20px;
+    top: -100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    transition: font-size 0.3s ease;
+    flex-grow: 1;
+}
+
+.expandButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+    color: var(--primary-color);
+}
+
+.templateForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
+    overflow: auto;
+}
+
+.typeSelector {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.typeButton {
+    padding: 8px 16px;
+    border: 1px solid var(--primary-color);
+    background: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--primary-color);
+}
+
+.typeButton.active {
     background-color: var(--primary-color);
-    height: 50px;
-    width: 140px;
-    border-radius: 40px;
+    color: white;
+}
+
+.templateTextarea {
+    width: 80%;
+    height: 80px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: none;
     font-family: system-ui;
+    transition: height 0.3s ease;
+}
+
+.templateTextarea.expanded {
+    height: 120px;
+}
+
+.saveButton {
+    position: relative;
+    top: -5px;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 20px;
+    border: none;
     font-weight: 600;
-    border: none; 
-    cursor: pointer; 
-    transition: background-color 0.3s; 
+    font-family: system-ui;
+    transition: background-color 0.3s;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
 }
 
-button:hover {
-    background-color: var(--secondary-color); 
+.saveButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
-.input {
-    position: relative;
-    top: 100px;
-    width: 40%;
-    padding: 10px;
-    margin: 10px 0; 
-    border: 1px solid #ccc; 
-    border-radius: 20px;
-    font-family: system-ui; 
+.saveButton:hover:not(:disabled) {
+    background-color: var(--secondary-color);
 }
 
-.textarea {
-    position: relative;
-    top: 100px;
-    width: 40%;
-    padding: 10px;
-    margin: 10px 0; 
-    border: 1px solid #ccc; 
-    border-radius: 20px;
-    height: 100px; 
-    font-family: 'Times New Roman';
+.savedTemplates {
+    margin-top: 15px;
+}
+
+.savedTemplates h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.noTemplates {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+.savedTemplateItem {
+    padding: 12px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    position:relative;
+    top:100px;
+}
+
+.templateContent {
+    position:relative;
+    top: -100px;
+    font-size: 1.3rem;
+    flex-grow: 1;
+}
+
+.templateType {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 14px;
+}
+
+.templateContent p {
+    margin: 5px 0 0 0;
+    word-break: break-word;
+}
+
+.deleteButton {
+    position:relative;
+    top: -10px;
+    background: none;
+    border: none;
+    color: #ff4444;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 5px;
+    line-height: 1;
+    height:15px;
+    width:30px;
+    transition: color 0.3s ease;
+}
+
+.deleteButton:hover {
+    color: #cc0000;
+}
+
+@media (max-width: 650px) {
+    .contentWrapper.expanded {
+        width: 90vw; /* Adjust to fit smaller screens */
+    }
 }
