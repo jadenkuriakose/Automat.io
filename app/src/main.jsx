@@ -8,6 +8,7 @@ import Notes from './pages/Notes';
 import Analyzer from './pages/Analyzer';
 import Generator from './pages/Generator';
 import Save from './pages/Save';
+import Theme from './pages/Theme';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -22,6 +23,7 @@ root.render(
             <Route path="/notes" element={<Notes />} />
             <Route path="/generator" element={<Generator />} />
             <Route path="/save" element={<Save />} />
+            <Route path="/theme" element={<Theme />} />
         </Routes>
     </Router>
 );

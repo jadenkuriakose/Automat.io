@@ -1,3 +1,4 @@
+import './index.css'
 import styles from './Analyzer.module.css';
 
 const Analyzer = () => {

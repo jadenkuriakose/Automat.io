@@ -1,3 +1,4 @@
+import './index.css';
 import styles from './Save.module.css';
 
 const Save = () => {

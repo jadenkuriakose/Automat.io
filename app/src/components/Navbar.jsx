@@ -11,7 +11,7 @@ const Navbar = () => {
                 <li><Link to="/notes">Tasks</Link></li>
                 <li><Link to="/save">Template Safe</Link></li>
                 <li><Link to="/generator">Message Generator</Link></li>
-                <li><Link to="/about">About</Link></li>
+                <li><Link to="/theme">Themes</Link></li>
             </ul>
         </nav>
     );

@@ -16,7 +16,7 @@ button {
     position: relative;
     top: 100px;
     left: 20px;
-    background-color: aquamarine;
+    background-color: var(--primary-color);
     height: 50px;
     width: 140px;
     border-radius: 40px;
@@ -28,7 +28,7 @@ button {
 }
 
 button:hover {
-    background-color: #4ab8a3; 
+    background-color: var(--secondary-color);; 
 }
 
 .input {
@@ -82,7 +82,7 @@ button:hover {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background: conic-gradient(aquamarine 100%, transparent 0%);
+    background: conic-gradient(var(--primary-color) 100%, transparent 0%);
     display: flex;
     justify-content: center;
     align-items: center;

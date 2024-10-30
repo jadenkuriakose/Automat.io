@@ -23,7 +23,7 @@ h2 {
 }
 
 button {
-    background-color: aquamarine;
+    background-color: var(--primary-color);
     height: 50px;
     width: 140px;
     border-radius: 40px;
@@ -37,7 +37,7 @@ button {
 }
 
 button:hover {
-    background-color: #4ab8a3;
+    background-color: var(--secondary-color);
 }
 
 .input,
