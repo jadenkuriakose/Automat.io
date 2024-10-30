@@ -105,7 +105,7 @@
     font-family: system-ui;
     transition: background-color 0.3s;
     background-color: var(--primary-color);
-    color: white;
+    color: black;
     cursor: pointer;
 }
 
