@@ -136,6 +136,7 @@ body{
     font-size: 18px;
     margin-bottom: 15px;
     text-align: center;
+    color: black;
 }
 
 .noTemplates {
@@ -173,6 +174,7 @@ body{
 .templateContent p {
     margin: 5px 0 0 0;
     word-break: break-word;
+    color: black;
 }
 
 .deleteButton {
