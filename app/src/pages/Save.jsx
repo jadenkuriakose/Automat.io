@@ -27,6 +27,7 @@ const Save = () => {
     };
 
     return (
+    <div className = {styles.background}>
         <div className={styles.pageContainer}>
             <div className={`${styles.templateContainer} ${isExpanded ? styles.expanded : ''}`}>
                 <div className={styles.contentWrapper}>
@@ -84,6 +85,7 @@ const Save = () => {
                         )}
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     );

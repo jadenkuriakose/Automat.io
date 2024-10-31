@@ -1,3 +1,12 @@
+body{
+    background: linear-gradient(var(--primary-color), black);
+    color: white;
+    min-height: 100vh; 
+    width: 100%; 
+    position: relative;
+    left: -10px;
+}
+
 .pageContainer {
     display: flex;
     justify-content: center;
@@ -11,16 +20,16 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     transition: all 0.3s ease;
-    width: 350px; /* Increased width */
-    height: 350px; /* Increased height */
-    padding: 20px; /* Keep padding */
+    width: 350px;
+    height: 350px; 
+    padding: 20px; 
     display: flex;
-    flex-direction: column; /* Ensure the layout is vertical */
+    flex-direction: column; 
 }
 
 .contentWrapper.expanded {
-    width: 700px; /* Increased width when expanded */
-    height: 600px; /* Increased height when expanded */
+    width: 700px; 
+    height: 600px;
 }
 
 .header {
@@ -38,6 +47,7 @@
     font-size: 24px;
     transition: font-size 0.3s ease;
     flex-grow: 1;
+    color: black;
 }
 
 .expandButton {

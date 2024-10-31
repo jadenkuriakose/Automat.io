@@ -39,6 +39,7 @@ const Theme = () => {
   };
 
   return (
+   <div className = {styles.background}>
     <div className={styles.themeContainer}>
       <div className={styles.themeHeader}>
         <h1 className={styles.title}>Theme Configuration</h1>
@@ -69,7 +70,8 @@ const Theme = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      </div>
   );
 };
 
