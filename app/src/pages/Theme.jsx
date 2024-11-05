@@ -31,7 +31,7 @@ const backgroundThemes = {
   gradient: {
     '--background-color': 'linear-gradient(45deg, #2E2E2E, var(--primary-color))',
     '--text-color': '#FFFFFF',
-    '--button-color': '#000000'
+    '--button-color': '#FFFFFF'
   }
 };
 
@@ -76,10 +76,10 @@ const Theme = () => {
 
   return (
     <div className={styles.background}>
+      <h1 className={styles.title}>Theme Configuration</h1>
       <div className={styles.themeContainer}>
+      <p className={styles.subtitle}>Select your preferred color scheme</p>
         <div className={styles.themeHeader}>
-          <h1 className={styles.title}>Theme Configuration</h1>
-          <p className={styles.subtitle}>Select your preferred color scheme</p>
           
           <div className={styles.selectWrapper}>
             <select 
