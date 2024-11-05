@@ -73,3 +73,9 @@
   .micIcon.recording {
     color: white;
   }
+
+  .generatedMessage{
+    position: relative;
+    text-align: center;
+    top: 150px;
+  }
