@@ -96,7 +96,6 @@ button:hover {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background: conic-gradient(var(--primary-color) 100%, transparent 0%);
     display: flex;
     justify-content: center;
     align-items: center;
