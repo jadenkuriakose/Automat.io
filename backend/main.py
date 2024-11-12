@@ -74,6 +74,37 @@ def grade(tone, prompt):
     except Exception as e:
         return f"An error occurred: {str(e)}", 500
 
+def feed(tone, prompt):
+    api_key = os.getenv("KEY1")  
+    if not api_key:
+        return "API key not found.", 500
+
+    client = Groq(api_key=api_key)
+    
+    try:
+        response = client.chat.completions.create(
+            model="llama3-8b-8192", 
+            messages=[
+                {
+                    "role": "user",
+                    "content": f"Write feedback on how to improve the message's grammar and accuracy in regards to how well it fits the tone of {tone}: {prompt} and make it simple to an extent with no weird formatting"
+                }
+            ],
+            temperature=0.7, 
+            max_tokens=500,  
+            top_p=1,
+            stream=True, 
+        )
+
+        msg = ""
+        for chunk in response:
+            msg += chunk.choices[0].delta.content or ""
+        
+        return msg.strip(), 200
+
+    except Exception as e:
+        return f"An error occurred: {str(e)}", 500
+
 
 @app.route("/generate-email", methods=["POST"])
 def generate_email():
@@ -108,6 +139,23 @@ def grade_email():
         return jsonify({"grade_message": grade_message})
     else:
         return jsonify({"error": grade_message}), status_code
+    
+@app.route("/feedback", methods=["POST"])
+def feedback():
+    data = request.get_json()
+    prompt = data.get("prompt", "").strip()
+    tone = data.get("tone", "").strip()
+
+    if not prompt or not tone:
+        return jsonify({"error": "Both prompt and tone are required."}), 400
+
+    future = executor.submit(feed, tone, prompt)
+    message, status_code = future.result()  
+
+    if status_code == 200:
+        return jsonify({"feedback": message})
+    else:
+        return jsonify({"error": message}), status_code
 
 
 if __name__ == "__main__":

@@ -8,6 +8,8 @@ const Analyzer = () => {
     const [message, setMessage] = useState('');
     const [tone, setTone] = useState('Professional');
     const [ringText, setRingText] = useState('100');  
+    const [feedbackText, setFeedbackText] = useState('');  
+
 
     const handleMessageChange = (e) => {
         setMessage(e.target.value);
@@ -17,9 +19,9 @@ const Analyzer = () => {
         setTone(e.target.value);
     };
 
-    const handleAnalyze = async () => {
+    const handleGrade = async () => {
         if (message.trim() === '') {
-            setRingText('Please enter a message.');
+            setRingText('0');
             return;
         }
 
@@ -42,6 +44,28 @@ const Analyzer = () => {
         }
     };
 
+    const handleAnalyze = async () => {
+
+        try {
+            // Sending the message and tone to the Flask API using Axios
+            const response = await axios.post('http://127.0.0.1:8080/feedback', {
+                prompt: message,
+                tone: tone,
+            });
+
+            // Check if the response is successful
+            if (response.status === 200) {
+                setFeedbackText(response.data.feedback); 
+                console.log(response.data)
+            } else {
+                setFeedbackText('Analysis failed.');
+            }
+        } catch (error) {
+            console.error('Error analyzing message:', error);
+            setFeedbackText('Error occurred.');
+        }
+    };
+
     return (
         <div className={styles.analyzer}>
             <h1>Message Analyzer</h1>
@@ -54,6 +78,7 @@ const Analyzer = () => {
                     onChange={handleMessageChange} 
                 />
                 <button className={styles.button} onClick={handleAnalyze}>Analyze</button>
+                <button className={styles.button} onClick={handleGrade}>Grade</button>
             </div>
 
             <div className={styles.dropdownContainer}>
@@ -79,6 +104,9 @@ const Analyzer = () => {
                 }}
             >
                 <span className={styles.ringText}>{ringText}</span>
+            </div>
+            <div className={styles.feedback}>
+                <span>{feedbackText}</span>
             </div>
         </div>
     );

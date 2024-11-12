@@ -136,4 +136,9 @@ button:hover {
     transform: translateY(-50%);
     pointer-events: none;
     color: #666;
-  }
+}
+
+.feedback{
+    position: relative;
+    top: 300px;
+}
