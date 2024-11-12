@@ -1,1 +1,4 @@
 # Automat.io
+**Automat.io** is an innovative message preparation software that leverages advanced large language models like llama3 to help users generate and analyze messages with ease. Built with Flask, React, and Vite, Automat.io provides a seamless interface where users can input prompts, receive AI-powered suggestions for message optimization, and analyze grammar and sentiment. It also supports speech-to-text functionality through the WebSpeech API, allowing users to dictate messages for enhanced convenience.
+
+Beyond message generation, Automat.io allows users to store messages and tasks, making it easy to organize and access important content. The software features dynamic theming options, enabling users to personalize the interface to suit their preferences. With Axios handling API requests and Flask powering the backend, Automat.io offers a smooth and efficient experience for managing messages, tasks, and themes all within one intuitive platform.
